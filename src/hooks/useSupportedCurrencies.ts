@@ -2,11 +2,11 @@ import { useQuery } from '@tanstack/react-query';
 import { ApiService } from '@/constants/ApiService';
 import { IApiResult, ISupportedCurrencies } from '@/interfaces';
 
-interface SupportedCurrenciesResponse extends IApiResult {
+interface ISupportedCurrenciesResponse extends IApiResult {
   payload: ISupportedCurrencies[]
 }
 
-const fetchSupportedCurrencies = async (): Promise<SupportedCurrenciesResponse> => {
+const fetchSupportedCurrencies = async (): Promise<ISupportedCurrenciesResponse> => {
   return fetch(ApiService.supportedCurrencies).then(res => res.json());
 }
 

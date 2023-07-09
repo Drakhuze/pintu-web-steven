@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-rgb: 255, 255, 255;
@@ -14,7 +20,48 @@
   }
 }
 
+html,
 body {
+  max-width: 100vw;
+  overflow-x: hidden;
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
+}
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+      width: 1px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+      border-radius: 100vh;
+      @apply bg-neutral-100 dark:bg-neutral-900
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+      @apply border-neutral-300 bg-gray-300 dark:border-neutral-700 dark:bg-gray-800 rounded
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+      @apply bg-gray-500 dark:bg-gray-700
+  }
+}
+
+.datatable thead tr,
+.datatable tbody tr {
+  @apply border border-neutral-200 dark:border-neutral-800;
+}
+
+.datatable thead tr th {
+  @apply p-4 text-gray-500 dark:text-gray-400 font-semibold;
+}
+
+.token {
+  @apply font-semibold
+}
+.token-lg td {
+  @apply p-4 align-middle;
+}
+.token-sm td{
+  @apply p-3;
 }
