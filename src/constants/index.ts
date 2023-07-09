@@ -1,8 +1,3 @@
-export const API = {
-  symbolList: 'https://www.binance.com/bapi/composite/v1/public/marketing/symbol/list',
-  ticker: 'https://api.binance.com/api/v3/ticker/24hr',
-};
-
 export const TAGS = [
   { tag: '', name: 'All' },
   { tag: 'defi', name: 'DeFi' },
