@@ -108,7 +108,7 @@ function Token({ row }: Props) {
         </td>
       </tr>
 
-      <tr className="token token-sm flex lg:hidden items-center transtition ease-in-out duration-200 hover:bg-slate-900 cursor-pointer">
+      <tr className="token token-sm flex lg:hidden items-center transtition ease-in-out duration-200 hover:bg-slate-100 dark:hover:bg-slate-900 cursor-pointer">
         <td className="p-0">
           <div
             className="h-10 w-10 rounded-full border dark:border-neutral-800 "
