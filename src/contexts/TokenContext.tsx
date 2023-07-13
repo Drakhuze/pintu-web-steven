@@ -1,7 +1,7 @@
-import { IToken } from "@/interfaces";
-import { createContext, useEffect, useMemo, useState } from "react";
-import useSymbolList from "@/hooks/useSymbolList";
-import useTicker from "@/hooks/useTicker";
+import { IToken } from '@/interfaces';
+import { createContext, useEffect, useMemo, useState } from 'react';
+import useSymbolList from '@/hooks/useSymbolList';
+import useTicker from '@/hooks/useTicker';
 
 interface ITokenContext {
   tokenList: IToken[];
@@ -9,7 +9,11 @@ interface ITokenContext {
   tickerLoading: boolean;
 }
 
-export const TokenContext = createContext<ITokenContext>({ tokenList: [], symbolListLoading: false, tickerLoading: false })
+export const TokenContext = createContext<ITokenContext>({
+  tokenList: [],
+  symbolListLoading: false,
+  tickerLoading: false,
+});
 
 export const TokenProvider = ({ children }: { children: JSX.Element }) => {
   const { isLoading: symbolListLoading, responseData: symbolListData } = useSymbolList();
@@ -24,20 +28,16 @@ export const TokenProvider = ({ children }: { children: JSX.Element }) => {
         price: price?.lastPrice,
         priceChangePercent: price?.priceChangePercent,
         highPrice: price?.highPrice,
-        lowPrice: price?.lowPrice
-      }
-    })
+        lowPrice: price?.lowPrice,
+      };
+    });
     combinedData?.sort((a, b) => {
       if (a.rank === null) return 1;
       if (b.rank === null) return -1;
       return a.rank < b.rank ? -1 : 1;
     });
     return combinedData;
-  }, [symbolListData, tickerData])
+  }, [symbolListData, tickerData]);
 
-  return (
-    <TokenContext.Provider value={{ tokenList, symbolListLoading, tickerLoading }}>
-      {children}
-    </TokenContext.Provider>
-  )
-}
+  return <TokenContext.Provider value={{ tokenList, symbolListLoading, tickerLoading }}>{children}</TokenContext.Provider>;
+};

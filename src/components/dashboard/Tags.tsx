@@ -1,21 +1,17 @@
-import { TAGS } from "@/constants";
-import { ITag } from "@/interfaces";
-import Badge from "../Badge";
+import { TAGS } from '@/constants';
+import { ITag } from '@/interfaces';
+import Badge from '../Badge';
+import { Dispatch, SetStateAction } from 'react';
 
 interface ITagsProps {
-  setSelectedBadge: any;
+  setSelectedBadge: Dispatch<SetStateAction<string>>;
 }
 
 const Tags = ({ setSelectedBadge }: ITagsProps) => (
-  <div className="flex m-4 justify-start overflow-x-auto scrollbar">
+  <div className="scrollbar m-4 flex justify-start overflow-x-auto">
     {TAGS.map((item: ITag) => (
-      <Badge
-        key={item.tag}
-        text={item.name}
-        tag={item.tag}
-        setSelectedBadge={setSelectedBadge}
-      />
+      <Badge key={item.tag} text={item.name} tag={item.tag} setSelectedBadge={setSelectedBadge} />
     ))}
   </div>
 );
-export default Tags
+export default Tags;

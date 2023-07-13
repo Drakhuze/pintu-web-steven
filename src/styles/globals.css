@@ -30,20 +30,20 @@ body {
 
 @layer utilities {
   .scrollbar::-webkit-scrollbar {
-      width: 1px;
+    width: 1px;
   }
 
   .scrollbar::-webkit-scrollbar-track {
-      border-radius: 100vh;
-      @apply bg-neutral-100 dark:bg-neutral-900
+    border-radius: 100vh;
+    @apply bg-neutral-100 dark:bg-neutral-900;
   }
 
   .scrollbar::-webkit-scrollbar-thumb {
-      @apply border-neutral-300 bg-gray-300 dark:border-neutral-700 dark:bg-gray-800 rounded
+    @apply rounded border-neutral-300 bg-gray-300 dark:border-neutral-700 dark:bg-gray-800;
   }
 
   .scrollbar::-webkit-scrollbar-thumb:hover {
-      @apply bg-gray-500 dark:bg-gray-700
+    @apply bg-gray-500 dark:bg-gray-700;
   }
 }
 
@@ -53,15 +53,12 @@ body {
 }
 
 .datatable thead tr th {
-  @apply p-4 text-gray-500 dark:text-gray-400 font-semibold;
+  @apply p-4 font-semibold text-gray-500 dark:text-gray-400;
 }
 
-.token {
-  @apply font-semibold
-}
 .token-lg td {
   @apply p-4 align-middle;
 }
-.token-sm td{
+.token-sm td {
   @apply p-3;
 }

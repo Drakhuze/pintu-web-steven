@@ -4,7 +4,7 @@ export interface IApiResult {
   message: string;
 }
 
-export interface ISupportedCurrencies {  
+export interface ISupportedCurrencies {
   currencyGroup: string;
   color: string;
   currencySymbol: string;
@@ -12,7 +12,7 @@ export interface ISupportedCurrencies {
   logo: string;
   decimal_point: number;
   listingDate: string;
-  wallets: IWallet[]
+  wallets: IWallet[];
 }
 
 interface IWallet {
@@ -38,33 +38,33 @@ export interface IPriceChanges {
 
 /* Binance Interface */
 export interface ITicker {
-  symbol: string,
-  priceChange: string,
-  priceChangePercent: string,
-  lastPrice: number,
-  volume: string,
-  highPrice: number,
-  lowPrice: number,
+  symbol: string;
+  priceChange: string;
+  priceChangePercent: string;
+  lastPrice: number;
+  volume: string;
+  highPrice: number;
+  lowPrice: number;
 }
 
 export interface ISymbol {
-  symbol: string,
-  name: string,
-  fullName: string,
-  logo: string,
-  price: number,
-  volume: string,
-  rank: number,
-  tags: string[],
+  symbol: string;
+  name: string;
+  fullName: string;
+  logo: string;
+  price: number;
+  volume: string;
+  rank: number;
+  tags: string[];
 }
 
 export interface IToken extends ISymbol {
-  priceChangePercent: string,
-  highPrice: number,
-  lowPrice: number,
+  priceChangePercent: string;
+  highPrice: number;
+  lowPrice: number;
 }
 
 export interface ITag {
-  name: string,
-  tag: string
+  name: string;
+  tag: string;
 }

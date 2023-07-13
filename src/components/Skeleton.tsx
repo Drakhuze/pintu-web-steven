@@ -6,7 +6,7 @@ interface ISkeletonProps {
 
 const Skeleton = ({ className }: ISkeletonProps) => (
   <div className="animate-pulse">
-    <div className={`${className} bg-gray-300 dark:bg-gray-700 rounded-sm`} />
+    <div className={`${className} rounded-sm bg-gray-300 dark:bg-gray-700`} />
   </div>
 );
 
